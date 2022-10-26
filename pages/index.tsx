@@ -151,13 +151,13 @@ const Home: NextPage = () => {
                     colorMode="dark"
                   >
                     {`Mint${quantity > 1 ? ` ${quantity}` : ""}${activeClaimCondition?.price.eq(0)
-                        ? " (Free)"
-                        : activeClaimCondition?.currencyMetadata.displayValue
-                          ? ` (${formatUnits(
-                            priceToMint,
-                            activeClaimCondition.currencyMetadata.decimals
-                          )} ${activeClaimCondition?.currencyMetadata.symbol})`
-                          : ""
+                      ? " (Free)"
+                      : activeClaimCondition?.currencyMetadata.displayValue
+                        ? ` (${formatUnits(
+                          priceToMint,
+                          activeClaimCondition.currencyMetadata.decimals
+                        )} ${activeClaimCondition?.currencyMetadata.symbol})`
+                        : ""
                       }`}
                   </Web3Button>
                 </div>
@@ -167,12 +167,7 @@ const Home: NextPage = () => {
         </div>
       </div>
       {/* Powered by thirdweb */}{" "}
-      <img
-        src="/logo.png"
-        alt="thirdweb Logo"
-        width={135}
-        className={styles.buttonGapTop}
-      />
+
     </div>
   );
 };
