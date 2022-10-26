@@ -12,7 +12,7 @@ import { useState } from "react";
 import styles from "../styles/Theme.module.css";
 
 // Put Your NFT Drop Contract address from the dashboard here
-const myNftDropContractAddress = "0x322067594DBCE69A9a9711BC393440aA5e3Aaca1";
+const myNftDropContractAddress = "0xE3b3F2027C68a779Dc1Dd45750C94A6670Cb67Fb";
 
 const Home: NextPage = () => {
   const { contract: nftDrop } = useContract(myNftDropContractAddress);
@@ -141,8 +141,7 @@ const Home: NextPage = () => {
                     // If the function is successful, we can do something here.
                     onSuccess={(result) =>
                       alert(
-                        `Successfully minted ${result.length} NFT${
-                          result.length > 1 ? "s" : ""
+                        `Successfully minted ${result.length} NFT${result.length > 1 ? "s" : ""
                         }!`
                       )
                     }
@@ -151,16 +150,15 @@ const Home: NextPage = () => {
                     accentColor="#f213a4"
                     colorMode="dark"
                   >
-                    {`Mint${quantity > 1 ? ` ${quantity}` : ""}${
-                      activeClaimCondition?.price.eq(0)
+                    {`Mint${quantity > 1 ? ` ${quantity}` : ""}${activeClaimCondition?.price.eq(0)
                         ? " (Free)"
                         : activeClaimCondition?.currencyMetadata.displayValue
-                        ? ` (${formatUnits(
+                          ? ` (${formatUnits(
                             priceToMint,
                             activeClaimCondition.currencyMetadata.decimals
                           )} ${activeClaimCondition?.currencyMetadata.symbol})`
-                        : ""
-                    }`}
+                          : ""
+                      }`}
                   </Web3Button>
                 </div>
               </>
